@@ -25,11 +25,11 @@ Alternatively, if you want to view the React UI in a separate port compared to S
 ## Development Notes ##
 Specifications
 
-• The logic to fetch word count is written in Java and utilise the Spring Boot framework.
+• The logic to fetch word count is written in Java and utilise the Spring Boot framework. <br>
 •  A frontend interface(React) accepts a string(jumbled/straight) and return the number of instances of the word
-   ("flight" is default) that can be formed.
-• The frontend communicates with a backend REST API.
-• Only lower-case characters will be given as an input.Even if the user enters Uppercase, the UI converts into lowercase
-• The string input textarea limits the user to enter maximum of 100 characters..
+   ("flight" is default) that can be formed.<br>
+• The frontend communicates with a backend REST API.<br>
+• Only lower-case characters will be given as an input.Even if the user enters Uppercase, the UI converts into lowercase. <br>
+• The string input textarea limits the user to enter maximum of 100 characters.<br>
    
    
