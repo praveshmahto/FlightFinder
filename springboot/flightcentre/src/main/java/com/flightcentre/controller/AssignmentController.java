@@ -15,7 +15,6 @@ import com.flightcentre.service.WordCounterInJumbledString;
 
 @RestController
 @RequestMapping("/api")
-//@CrossOrigin(origins = "http://localhost:3000") //CORS is configured in WebConfig.java for identification from React UI
 public class AssignmentController {
 	/*
 	 * Can be invoked as a standalone in the browser. 
