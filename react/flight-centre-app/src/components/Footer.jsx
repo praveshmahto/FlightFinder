@@ -1,10 +1,13 @@
 import React from 'react';
 import '../css/Banner.css'; 
 
-function Footer({ companyName, tagline, imageUrl }) {
+import logo from '../assets/pravesh_face.png';
+
+function Footer({ tagline }) {
   return (
     <div className="footer-container" > 
       <p>{tagline}</p>
+       {/*<img src={logo} alt="Logo" className="logo" />*/}
     </div>
   );
 }

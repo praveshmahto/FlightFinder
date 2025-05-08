@@ -15,14 +15,20 @@ import com.flightcentre.service.WordCounterInJumbledString;
 
 @RestController
 @RequestMapping("/api")
-@CrossOrigin(origins = "http://localhost:3000")
+//@CrossOrigin(origins = "http://localhost:3000") //CORS is configured in WebConfig.java for identification from React UI
 public class AssignmentController {
-	
+	/*
+	 * Can be invoked as a standalone in the browser. 
+	 * Eg: http://localhost:8080/api/wordCount?jumbled=flightGhtFli&word=flight
+	 */
 	@GetMapping("/wordCount")
 	public int getWordCount(@RequestParam("jumbled") String jumbled,@RequestParam("word") String word) {
 		return WordCounterInJumbledString.countWordInJumbledString(jumbled, word);
 	}
 	
+	/*
+	 * Interfacing from React UI using request body in the POST method
+	 */
 	@PostMapping("/postWordCount")
 	public ResponseEntity<?> postWordCount(@RequestBody Word resource) {
 		
@@ -30,23 +36,5 @@ public class AssignmentController {
 		String jumbled = resource.getJumbled();
 		int wordCount = WordCounterInJumbledString.countWordInJumbledString(jumbled, word);
 		 return new ResponseEntity<>(new Word(word, jumbled,wordCount), HttpStatus.OK);
-		//return WordCounterInJumbledString.countWordInJumbledString(jumbled, word);
 	}
-	/*
-	 * @PostMapping("/postWordCount") public ResponseEntity<?>
-	 * postWordCount(@RequestParam("jumbled") String jumbled,@RequestParam("word")
-	 * String word) { int wordCount =
-	 * WordCounterInJumbledString.countWordInJumbledString(jumbled, word); return
-	 * new ResponseEntity<>(new Word(word, jumbled,wordCount), HttpStatus.OK);
-	 * //return WordCounterInJumbledString.countWordInJumbledString(jumbled, word);
-	 * }
-	 */
-	
-	
-	/*
-		 * 
-		 * @PostMapping public ResponseEntity<?> newBazz(@RequestParam("name") String
-		 * name){ return new ResponseEntity<>(new Word("5", name), HttpStatus.OK); }
-		 */
-
 }

@@ -1,12 +1,13 @@
 import React from 'react';
-import '../css/Banner.css'; // Create a CSS file for styling
+import '../css/Banner.css'; 
 
-function Banner({ companyName, tagline, imageUrl }) {
+function Banner({ companyName, imageUrl }) {
   return (
     <div className="banner-container" >
+     
     <div className="banner-content">
         <div className="banner-text">
-          <p>FLIGHT FINDER</p>
+          <p>{companyName}</p>
         </div>
       </div>
     </div>

@@ -14,7 +14,7 @@ public class WordCounterInJumbledString {
 	}
 
 	public static int countWordInJumbledString(String jumbled, String word) {
-		// conver to lowercase for both the supplied string and the word
+		// trim and convert to lowercase for both the supplied string and the word
 		jumbled = jumbled.toLowerCase().trim();
 		word = word.toLowerCase().trim();
 
@@ -39,8 +39,6 @@ public class WordCounterInJumbledString {
 		for (final char c : str.toCharArray()) {
 			freq.put(c, freq.getOrDefault(c, 0) + 1);
 		}
-
 		return freq;
-
 	}
 }
