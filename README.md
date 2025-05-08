@@ -1,4 +1,6 @@
-# FlightFinder
+# Flight Finder 
+<br> **Simple application named “Flight Finder” with the goal of determining how many
+instances of the word “flight” are possible in a supplied string.**
 
 This repository contains React application and a Spring Boot App which wraps the React app.
 
