@@ -1,0 +1,10 @@
+package com.flightcentre.model;
+
+public class Word {
+	
+	private String word;
+	private String jumbled;
+	private int wordCount;
+	
+
+}

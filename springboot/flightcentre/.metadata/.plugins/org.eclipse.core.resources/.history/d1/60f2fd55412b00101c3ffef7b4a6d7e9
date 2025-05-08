@@ -1,0 +1,5 @@
+package com.flightcentre.model;
+
+public class Word {
+
+}

@@ -1,0 +1,41 @@
+.banner-container {
+    background-size: cover;
+    background-position: center;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+    height: 100px;
+    /* Add an overlay for better text visibility if needed */
+  }
+
+  .banner-container::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #D40119; /* Adjust the alpha value for darkness */
+  }
+
+  .banner-content {
+      position: relative;
+      z-index: 1; /* Ensure content is above the overlay */
+  }
+
+  .banner-content h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+  }
+
+  .banner-content p {
+    font-size: 1.2em;
+  }
+
+  .aurora-1v8eun1 {
+    padding-top: 30px;
+    width: 200px;
+    height: 20px;
+    align-items: center;
+}

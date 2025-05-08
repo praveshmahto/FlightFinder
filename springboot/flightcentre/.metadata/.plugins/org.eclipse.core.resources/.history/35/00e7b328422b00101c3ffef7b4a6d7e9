@@ -1,0 +1,36 @@
+package com.flightcentre.controller;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.flightcentre.model.Word;
+import com.flightcentre.service.WordCounterInJumbledString;
+
+@RestController
+@RequestMapping("/api")
+@CrossOrigin(origins = "http://localhost:3000")
+public class AssignmentController {
+	
+	@GetMapping("/wordCount")
+	public int getWordCount(@RequestParam("jumbled") String jumbled,@RequestParam("word") String word) {
+		return WordCounterInJumbledString.countWordInJumbledString(jumbled, word);
+	}
+	
+
+	@PostMapping("/postWordCount")
+	public ResponseEntity<?> postWordCount(@RequestParam("jumbled") String jumbled,@RequestParam("word") String word) {
+		int wordCount = WordCounterInJumbledString.countWordInJumbledString(jumbled, word);
+		 return new ResponseEntity<>(new Word(word, jumbled,wordCount), HttpStatus.OK);
+		//return WordCounterInJumbledString.countWordInJumbledString(jumbled, word);
+	}/*
+		 * 
+		 * @PostMapping public ResponseEntity<?> newBazz(@RequestParam("name") String
+		 * name){ return new ResponseEntity<>(new Word("5", name), HttpStatus.OK); }
+		 */
+
+}
