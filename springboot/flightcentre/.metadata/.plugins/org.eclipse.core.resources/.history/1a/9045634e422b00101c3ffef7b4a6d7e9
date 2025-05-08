@@ -1,5 +1,0 @@
-package com.flightcentre.config;
-
-public class CorsConfig {
-
-}

@@ -1,12 +1,16 @@
 import React, { useState } from 'react';
-import '../css/UserForm.css'; 
+import '../css/UserForm.css';
+
+const SERVER_URL = process.env.REACT_APP_SERVER_URL;
 
 function UserForm() {
+
   const [user, setUser] = useState({ word: 'flight', jumbled: '' });
   const [wordCount, setWordCount] = useState(null);
+  
   const handleSubmit = (event) => {
     event.preventDefault();
-    fetch('http://localhost:8080/api/postWordCount', {
+    fetch(SERVER_URL + '/api/postWordCount', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
