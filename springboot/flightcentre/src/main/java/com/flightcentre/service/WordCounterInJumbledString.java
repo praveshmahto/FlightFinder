@@ -6,8 +6,8 @@ import java.util.Map;
 public class WordCounterInJumbledString {
 
 	public static void main(final String[] args) {
-		final String jumbled = "fflliigghhttFl";
-		final String word = "flight";
+		final String jumbled = "fflliigghhttFl ghtfli";
+		final String word = "flight ";
 		final int count = countWordInJumbledString(jumbled, word);
 		System.out.println(word + " appears " + count + " times in the string.");
 
@@ -15,8 +15,8 @@ public class WordCounterInJumbledString {
 
 	public static int countWordInJumbledString(String jumbled, String word) {
 		// conver to lowercase for both the supplied string and the word
-		jumbled = jumbled.toLowerCase();
-		word = word.toLowerCase();
+		jumbled = jumbled.toLowerCase().trim();
+		word = word.toLowerCase().trim();
 
 		// count character frequencies in the supplied string and the user input word
 		final Map<Character, Integer> jumbledFreq = getCharFrequency(jumbled);
